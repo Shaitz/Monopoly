@@ -40,7 +40,6 @@
 		<maven.compiler.source>11</maven.compiler.source>
 		<sonar.organization>shait</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.login>ecdf01278644aec4d267bae6693ed0942f28daab</sonar.login>
 	</properties>
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
 	<dependencies>
