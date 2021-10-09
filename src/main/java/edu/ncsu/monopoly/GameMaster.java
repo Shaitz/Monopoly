@@ -12,7 +12,7 @@ public class GameMaster {
 	private GameBoard gameBoard;
 	private MonopolyGUI gui;
 	private int initAmountOfMoney;
-	private ArrayList<Player> players = new ArrayList<Player>();
+	private ArrayList players = new ArrayList();
 	private int turn = 0;
 	private int utilDiceRoll;
 	private boolean testMode;
@@ -166,17 +166,17 @@ public class GameMaster {
     }
 
 	public Player getPlayer(int index) {
-		return players.get(index);
+		return (Player)players.get(index);
 	}
 	
 	public int getPlayerIndex(Player player) {
 		return players.indexOf(player);
 	}
 
-    public ArrayList<Player> getSellerList() {
-        ArrayList<Player> sellers = new ArrayList<Player>();
-        for (Iterator<Player> iter = players.iterator(); iter.hasNext();) {
-            Player player = iter.next();
+    public ArrayList getSellerList() {
+        ArrayList sellers = new ArrayList();
+        for (Iterator iter = players.iterator(); iter.hasNext();) {
+            Player player = (Player) iter.next();
             if(player != getCurrentPlayer()) sellers.add(player);
         }
         return sellers;
@@ -191,7 +191,7 @@ public class GameMaster {
 	}
 
 	public void movePlayer(int playerIndex, int diceValue) {
-		Player player = players.get(playerIndex);
+		Player player = (Player)players.get(playerIndex);
 		movePlayer(player, diceValue);
 	}
 	
@@ -227,7 +227,7 @@ public class GameMaster {
 
 	public void reset() {
 		for(int i = 0; i < getNumberOfPlayers(); i++){
-			Player player = players.get(i);
+			Player player = (Player)players.get(i);
 			player.setPosition(gameBoard.getCell(0));
 		}
 		if(gameBoard != null) gameBoard.removeCards();
