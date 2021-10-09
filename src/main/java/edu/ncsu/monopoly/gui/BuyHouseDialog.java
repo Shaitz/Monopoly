@@ -15,6 +15,10 @@ import edu.ncsu.monopoly.Player;
 
 
 public class BuyHouseDialog extends JDialog {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JComboBox<String> cboMonopoly; 
 	private JComboBox<Integer> cboNumber;
 
@@ -49,7 +53,7 @@ public class BuyHouseDialog extends JDialog {
 		return cboMonopoly;
 	}
 	
-	private JComboBox buildNumberComboBox() {
+	private JComboBox<Integer> buildNumberComboBox() {
 		cboNumber = new JComboBox<>(new Integer[]{
 				new Integer(1),
 				new Integer(2),
